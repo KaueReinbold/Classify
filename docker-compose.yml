@@ -1,0 +1,15 @@
+version: '3.4'
+
+name: 'classify'
+
+services:
+  backend:
+    image: classify-backend
+    container_name: classify-backend
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    environment:
+      - FLASK_APP=./courses/index.py
+    ports:
+      - 5000:5000
