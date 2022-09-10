@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "donjayamanne.python-environment-manager",
+        "vivaxy.vscode-conventional-commits",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+    ]
+}
