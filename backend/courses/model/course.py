@@ -2,10 +2,25 @@ import datetime as dt
 
 from marshmallow import Schema, fields
 
+from sqlalchemy import Column, String, Integer, DateTime
 
-class Course():
-    def __init__(self, description,
-                 time) -> None:
+from courses.base.base import Base
+
+
+class Course(Base):
+    __tablename__ = 'courses'
+
+    id = Column(Integer, primary_key=True)
+    description = Column(String)
+    time = Column(Integer)
+    created_on = Column(DateTime)
+    modified_on = Column(DateTime)
+
+    def __init__(
+        self,
+        description,
+        time
+    ) -> None:
         self.description = description
         self.time = time
         self.created_on = dt.datetime.now()
