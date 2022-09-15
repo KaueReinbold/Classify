@@ -1,21 +1,20 @@
 from flask import Flask, jsonify
+from courses.base.base import Session
 
 from courses.model.course import Course, CourseSchema
 
 app = Flask(__name__)
 
-courses_mock = [
-    Course('Python', 0),
-    Course('ReactJs', 0),
-    Course('Tests', 0)
-]
-
 
 @app.route("/courses")
 def get_courses():
+    session = Session()
+
+    courses_result = session.query(Course).all()
+
     schema = CourseSchema(many=True)
 
-    courses = schema.dump(courses_mock)
+    courses = schema.dump(courses_result)
 
     return jsonify(courses)
 
