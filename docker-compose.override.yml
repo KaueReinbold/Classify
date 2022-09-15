@@ -1,0 +1,18 @@
+version: '3.4'
+
+name: 'classify'
+
+services:
+  backend:
+    environment:
+      POSTGRES_CONNECTION_STRING: postgresql://postgres:postgres@db:5432/postgres
+      FLASK_APP: ./courses/index.py
+    ports:
+      - 5000:5000
+
+  db:
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'

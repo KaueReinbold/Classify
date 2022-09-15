@@ -9,16 +9,7 @@ services:
     build:
       context: ./backend
       dockerfile: ./Dockerfile
-    environment:
-      - FLASK_APP=./courses/index.py
-    ports:
-      - 5000:5000
 
   db:
     image: postgres:14.1-alpine
     restart: always
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - '5432:5432'

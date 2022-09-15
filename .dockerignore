@@ -1,0 +1,12 @@
+# Mac OSX 
+.DS_Store
+
+# PyCharm
+.idea/
+
+# 12factor.net
+.env
+
+# Python specific
+__pycache__/
+*.py[cod]
