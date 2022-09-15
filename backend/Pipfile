@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 flask = "*"
 marshmallow = "*"
+python-dotenv = "*"
+psycopg2 = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
